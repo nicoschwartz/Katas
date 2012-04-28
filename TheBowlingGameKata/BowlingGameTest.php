@@ -24,6 +24,10 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase{
         $this->game->roll(5);
     }
 
+    private function rollStrike(){
+        $this->game->roll(10);
+    }
+
     public function testGutterGame(){
 
         $this->rollMany(20, 0);
@@ -46,7 +50,7 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase{
 
     public function testOneStrike(){
 
-        $this->game->roll(10);
+        $this->rollStrike();
         $this->game->roll(3);
         $this->game->roll(4);
         $this->rollMany(16, 0);
